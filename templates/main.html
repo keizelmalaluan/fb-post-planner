@@ -1,0 +1,57 @@
+<html>
+<head>
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/static/js/vendors/jquery.js"></script>
+    <script src="/static/js/vendors/bootstrap.min.js"></script>
+    <script src="/static/js/vendors/handlebars.js"></script>
+    <script src="/static/js/app.js"></script>
+  <title>Team 14 Fb Post Planner</title>
+</head>
+<body>
+<div id="fb-root"></div>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">FB Post Planner</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+              <li><a href="#"></a></li>
+              <li><a href="#"><div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true" onlogin="login"></div></a></li>
+            </ul>
+                </div>
+
+
+
+              </div>
+            </div>
+
+    <div class="container" style='top: 70px; position: relative;'>
+      <div id="status">
+      </div>
+    </div>
+
+    <div class="container" style='top: 70px; position: relative;'>
+        <div class='row'>
+
+            <form role="form" id="message">
+              <div class="form-group">
+                <div class="col-md-4">
+                <label for="exampleInputEmail1">Message:</label>
+                <textarea class="form-control" rows="3"id="message" required placeholder="What is on your mind?"></textarea>
+                <br>
+                <button type="submit" class="btn btn-default btn-facebook">Post</button>
+                </div>
+              </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
