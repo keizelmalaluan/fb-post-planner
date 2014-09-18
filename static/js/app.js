@@ -1,17 +1,31 @@
 var user;
 var res;
 function initialize(){
+
+
 $("#message").submit(function(){
 
-    if(res.status === "connected"){
-    post(user);
-    console.log(user);
-    return false;
-    } else{
-        alert("Please Log in to Facebook to post something! ");
-        return false;
+    if (res.status==="connected"){
+    $("#message [name='access_token']").val(user.accessToken);
+    $("#message [name='facebookid']").val(user.userID);
     }
-    });
+    else {
+      alert("Please Log in to facebook");
+      return false;
+    }
+    })
+
+$("#message2").submit(function(){
+    if (res.status==="connected"){
+    $("#message2 [name='access_token1']").val(user.accessToken);
+    $("#message2 [name='facebookid1']").val(user.userID);
+    $("#message2 [name='msg1']").val($("#message [name='msg']").val());
+    }
+    else {
+      alert("Please Log in to facebook");
+      return false;
+    }
+    })
 }
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -19,7 +33,7 @@ function statusChangeCallback(response) {
     res = response;
     user = response.authResponse;
   }
-  function post(asd){
+  /*function post(asd){
     var baseUrl = "https://graph.facebook.com/v2.1/";
     var url = baseUrl + asd.userID + "/feed/";
     var msg = $("#message textarea").val();
@@ -36,7 +50,7 @@ function statusChangeCallback(response) {
                         alert('An error occured. Try to reload the page and try again.')
                     }
                 }); 
-    }
+    }*/
 
   function login(){
     location.reload();
