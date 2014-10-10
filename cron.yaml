@@ -1,0 +1,4 @@
+cron:
+- description: post scheduled posts
+  url: /delay/post
+  schedule: every 1 mins

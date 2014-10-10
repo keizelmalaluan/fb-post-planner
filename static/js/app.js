@@ -1,7 +1,10 @@
 var user;
 var res;
-function initialize(){
 
+$(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+function initialize(){
 
 $("#message").submit(function(){
 
@@ -32,7 +35,14 @@ function statusChangeCallback(response) {
     console.log(response);
     res = response;
     user = response.authResponse;
+    if(user){
+            $("#list").attr("href","/list/"+user.userID);
+        }else{
+            alert("Please Login");
+        }
+        
   }
+
   /*function post(asd){
     var baseUrl = "https://graph.facebook.com/v2.1/";
     var url = baseUrl + asd.userID + "/feed/";
