@@ -39,7 +39,8 @@ class MainHandler(webapp2.RequestHandler):
         token = short_to_long_lived(acctoken, self)
         token = decode_response(token)
         yourpost.accesstoken = token["access_token"]
-    	yourpost.message = self.request.get("msg1")
+    	message = self.request.get("msg1")
+        yourpost.message = message.upper()
         yourpost.date_to_post = datetime.strptime(self.request.get("datetopost"),'%m/%d/%Y %I:%M %p')
     	yourpost.put()
     	self.redirect("/")
@@ -79,7 +80,7 @@ class PostHandler(webapp2.RequestHandler):
     def post(self):
     	data = {
                     "method": "post",
-                    "message": self.request.get('msg'),
+                    "message": self.request.get('msg').upper(),
                     "access_token": self.request.get('access_token')
         };
         fbid = self.request.get("facebookid")
